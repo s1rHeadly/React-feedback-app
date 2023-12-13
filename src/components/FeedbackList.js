@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import FeedbackItem from './FeedbackItem';
 
 const FeedbackList = ({feedbackItems}) => {
@@ -9,10 +10,18 @@ const FeedbackList = ({feedbackItems}) => {
     content = feedbackItems.map((item) => <FeedbackItem item={item} key={item.id}/>)
   }
 
-  console.log(content)
   return (
     <div className='feedback-list'>{content}</div>
   )
+}
+
+FeedbackList.propTypes = {
+  feedbackItems: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    text: PropTypes.string,
+    rating: PropTypes.number,
+
+  }))
 }
 
 export default FeedbackList
