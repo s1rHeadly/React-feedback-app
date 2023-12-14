@@ -5,7 +5,7 @@ import FeedbackItem from './FeedbackItem';
 const FeedbackList = ({feedbackItems, onHandleDelete}) => {
 
   
-  let content = 'Sorry no items exist';
+  let content = 'No feedback has yet been added';
   if(feedbackItems.length > 0){
     content = feedbackItems.map((item) => <FeedbackItem item={item} key={item.id} onHandleDelete={onHandleDelete}/>)
   }
